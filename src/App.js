@@ -30,6 +30,7 @@ function App() {
   }
 
   const deletePicture = (picture) => {
+    console.log(picture);
     if (pictures.find(item => item === picture)) {
       setPictures(prev => [...prev.filter(item => item !== picture)]);
     }

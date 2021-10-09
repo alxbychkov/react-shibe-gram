@@ -4,7 +4,6 @@ import React from "react";
 import sad from "../assets/img/sad.gif";
 
 function Home({pictures, addToFavorites, favorites, loading, deletePicture}) {
-
     return (
         <div className="content">
             {
@@ -22,7 +21,7 @@ function Home({pictures, addToFavorites, favorites, loading, deletePicture}) {
                                             image={obj}
                                             inFavorite={favorites.find(item => item === obj) ? true : false}
                                             onFavorite={product => addToFavorites(product)}
-                                            onDelete={deletePicture}
+                                            onDelete={product => deletePicture(product)}
                                         />
                                     ))
                                 }
