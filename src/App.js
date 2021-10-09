@@ -2,26 +2,34 @@ import React from "react";
 import axios from "axios";
 import Header from "./components/Header";
 import Home from "./pages/Home";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { loadData, setFavorite } from "./redux/actions";
 
 function App() {
-  const [pictures, setPictures] = React.useState([]);
+  const dispatch = useDispatch();
+  const pictures = useSelector(state => state.pictures);
+
+
+  // const [pictures, setPictures] = React.useState([]);
   const [favorites, setFavorites] = React.useState([]);
   const [isLoading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    async function loadData() {
+    async function loadDataa() {
       const itemsData = await axios.get('/shibes?count=20&urls=true&httpsUrls=true');
 
       setLoading(false);
-
-      setPictures(itemsData.data);
-      setFavorites([]);
+      dispatch(loadData(itemsData.data));
+      // setPictures(itemsData.data);
+      // setFavorites([]);
     }
 
-    loadData();  
+    loadDataa(); 
   }, []);
 
   const addToFavorites = (picture) => {
+    dispatch(setFavorite('dasdads'));
     if (favorites.find(item => item === picture)) {
       setFavorites(prev => [...prev.filter(item => item !== picture)]);
     } else {
@@ -32,7 +40,7 @@ function App() {
   const deletePicture = (picture) => {
     console.log(picture);
     if (pictures.find(item => item === picture)) {
-      setPictures(prev => [...prev.filter(item => item !== picture)]);
+      // setPictures(prev => [...prev.filter(item => item !== picture)]);
     }
   }
 
@@ -40,7 +48,7 @@ function App() {
     <div className="wrapper">
       <Header></Header>
       <Home
-        pictures={pictures}
+        pictures={pictures.pictures}
         loading={isLoading}
         addToFavorites={addToFavorites}
         deletePicture={deletePicture}
