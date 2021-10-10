@@ -16,7 +16,7 @@ function Home({filtered}) {
     React.useEffect(() => {
         async function loadPictures() {
             try {
-                const itemsData = await axios.get('/shibes?count=20&urls=true&httpsUrls=true');
+                const itemsData = await axios.get('https://cors-anywhere.herokuapp.com/https://shibe.online/api/shibes?count=20&urls=true&httpsUrls=true');
     
                 setLoading(false);
                 dispatch(loadData(itemsData.data));
