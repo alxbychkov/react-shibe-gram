@@ -2,11 +2,11 @@ import React from 'react';
 import styles from './Card.module.scss';
 
 function Card(props) {
-    const [inFavorite, setFavorite] = React.useState(props.inFavorite)
-    console.log(props.image, inFavorite);
+    const [inFavorite, setFavorites] = React.useState(props.inFavorite);
+
     const onFavoriteBtn = () => {
         props.onFavorite(props.image);
-        setFavorite(!inFavorite);
+        setFavorites(!inFavorite);
     }
 
     const onDeleteBtn = () => {

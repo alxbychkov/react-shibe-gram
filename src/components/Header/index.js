@@ -2,10 +2,15 @@ import styles from './Header.module.scss';
 import logo from '../../assets/img/logo.png';
 import React from 'react';
 
-function Header(props) {
+function Header() {
     const [filter, setFilter] = React.useState(false);
+
     const filterPictures = () => {
-        filter ? setFilter(false) : setFilter(true);
+        if (filter) {
+            setFilter(false);
+        } else {
+            setFilter(true);
+        }
     }
     return (
         <header className={styles.header}>
