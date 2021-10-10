@@ -3,10 +3,16 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 
 function App() {
+  const [filtered, setFilter] = React.useState(false);
+
+  const onFilter = () => {
+    setFilter(!filtered);
+  }
+
   return (
     <div className="wrapper">
-      <Header></Header>
-      <Home/>
+      <Header onFilter={onFilter}/>
+      <Home filtered={filtered}/>
     </div>
   );
 }

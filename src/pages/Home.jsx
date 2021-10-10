@@ -2,12 +2,13 @@ import Card from "../components/Card";
 import Loader from "../components/Loader";
 import React from "react";
 import sad from "../assets/img/sad.gif";
+import empty from "../assets/img/empty.png";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { deletePicture, loadData, setFavorite } from "../redux/actions";
 import axios from "axios";
 
-function Home() {
+function Home({filtered}) {
     const [isLoading, setLoading] = React.useState(true);
     const dispatch = useDispatch();
     const state = useSelector(state => state.pictures);
@@ -32,37 +33,46 @@ function Home() {
     }
 
     const deletePictures = (picture) => {
+        if (state.favorites.indexOf(picture) !== -1) addToFavorites(picture);
         dispatch(deletePicture(picture));
     }
-
 
     return (
         <div className="content">
             {
-                state.pictures.length 
+                state[`${filtered ? 'favorites' : 'pictures'}`].length 
                     ?   <>
                             <div className="content__head">
-                                <h2 className="content__title">Все фотографии</h2>
+                                <h2 className="content__title">
+                                    {
+                                        filtered ? 'Избранное' : 'Все фотографии'
+                                    }
+                                </h2>
                             </div>
                             <div className="pictures__wrapper">
                                 {
-                                    isLoading ? [...Array(10)].map((i,j) => <Loader key={j}/>) :
-                                    state.pictures.map((image, index) => (
-                                        <Card
-                                            key={index+image}
-                                            image={image}
-                                            inFavorite={state.favorites.find(item => item === image) ? true : false}
-                                            onFavorite={picture => addToFavorites(picture)}
-                                            onDelete={picture => deletePictures(picture)}
-                                        />
-                                    ))
+                                    isLoading ? [...Array(20)].map((i,j) => <Loader key={j}/>) :
+                                        state[`${filtered ? 'favorites' : 'pictures'}`].map((image, index) => (
+                                            <Card
+                                                key={index+image}
+                                                image={image}
+                                                inFavorite={state.favorites.find(item => item === image) ? true : false}
+                                                onFavorite={picture => addToFavorites(picture)}
+                                                onDelete={picture => deletePictures(picture)}
+                                                filtered={filtered}
+                                            />
+                                        ))
                                 }
                             </div>   
                         </>
                     :   <div className="pictures__empty">
-                            <h2 className="content__title">Ooops..</h2>
+                            <h2 className="content__title">
+                                {
+                                    filtered ? 'В избранном ничего нет..' : 'Ooops..'
+                                }
+                            </h2>
                             <div className="gif">
-                                <img src={sad} alt="" />
+                                <img src={filtered ? empty : sad} alt="no_data" />
                             </div>
                         </div>
             }

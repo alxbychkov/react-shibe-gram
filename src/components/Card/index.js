@@ -17,7 +17,9 @@ function Card(props) {
         <div className={styles.card__item}>
             <div className={styles.card__item__image}>
                 <div className={`${styles.card__item__btn__favorite} ${inFavorite ? styles.active : ''}`} onClick={onFavoriteBtn}></div>
-                <div className={styles.card__item__btn__delete} onClick={onDeleteBtn}></div>
+                {
+                    props.filtered || <div className={styles.card__item__btn__delete} onClick={onDeleteBtn}></div>
+                }
                 <img width={182} height={182} src={props.image} alt={props.image} />
             </div>
         </div>
