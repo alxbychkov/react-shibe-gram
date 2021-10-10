@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import './assets/styles/style.scss';
 import App from './App';
 import { Provider } from 'react-redux';
-import { compose, createStore } from 'redux';
-import { rootReducer } from './redux/rootReducer';
+import { saveToLocalStorage } from './redux/initialState';
+import { store } from './redux/store';
 
-const store = createStore(rootReducer, compose(
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-));
+store.subscribe(() => {
+  const state = store.getState();
+  if (state.pictures?.favorites) saveToLocalStorage(state.pictures.favorites);
+});
 
 ReactDOM.render(
   <Provider store={store}>
