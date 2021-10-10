@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-shibe-gram/static/css/main.e2c17442.chunk.css",
-    "main.js": "/react-shibe-gram/static/js/main.e438c6fc.chunk.js",
-    "main.js.map": "/react-shibe-gram/static/js/main.e438c6fc.chunk.js.map",
+    "main.js": "/react-shibe-gram/static/js/main.50dae5f3.chunk.js",
+    "main.js.map": "/react-shibe-gram/static/js/main.50dae5f3.chunk.js.map",
     "runtime-main.js": "/react-shibe-gram/static/js/runtime-main.6c337af0.js",
     "runtime-main.js.map": "/react-shibe-gram/static/js/runtime-main.6c337af0.js.map",
     "static/js/2.9cb8fb26.chunk.js": "/react-shibe-gram/static/js/2.9cb8fb26.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.6c337af0.js",
     "static/js/2.9cb8fb26.chunk.js",
     "static/css/main.e2c17442.chunk.css",
-    "static/js/main.e438c6fc.chunk.js"
+    "static/js/main.50dae5f3.chunk.js"
   ]
 }
