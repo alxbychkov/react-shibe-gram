@@ -2,6 +2,10 @@
 
 Application with funny dog images.
 
+# :anger::anger::anger: NEED UNLOCK BROWSER ACCESS TO THE DEMO CORS.
+
+At first visit [activate browser](http://cors-anywhere.herokuapp.com/corsdemo) and then open the [app](https://alxbychkov.github.io/react-shibe-gram).
+
 ## Explanation
 
 This app load pictures from [API](https://shibe.online).

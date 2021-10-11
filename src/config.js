@@ -1,1 +1,1 @@
-export const API_URL = '/shibes?count=20&urls=true&httpsUrls=true';
+export const API_URL = 'https://cors-anywhere.herokuapp.com/https://shibe.online/api/shibes?count=20&urls=true&httpsUrls=true';
