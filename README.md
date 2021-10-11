@@ -8,6 +8,14 @@ This app load pictures from [API](https://shibe.online).
 You can see images, delete them from board and liked.
 All liked images saved, and available by click :heart: in header.
 
+## Stack:
+
+    +ReactJS + хуки
+    +Redux
+    +Axios
+    +SCSS
+    +React Skeleton
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -34,7 +42,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 Builds the app for production to the Github Pages.
 Take gh-pages brunch to save.
-
 See [app](https://alxbychkov.github.io/react-shibe-gram)
 
 
