@@ -10,11 +10,11 @@ All liked images saved, and available by click :heart: in header.
 
 ## Stack:
 
-    +ReactJS + хуки
-    +Redux
-    +Axios
-    +SCSS
-    +React Skeleton
++ ReactJS + хуки
++ Redux
++ Axios
++ SCSS
++ React Skeleton
 
 ## Available Scripts
 

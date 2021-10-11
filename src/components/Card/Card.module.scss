@@ -26,6 +26,20 @@
       }
     }
 
+    &__title {
+      margin-top: 14px;
+      font-size: 14px;
+      line-height: 17px;
+      color: #000000;
+      text-align: center;
+      font-weight: 600;
+      padding: 0 25px;
+      overflow: hidden;
+      white-space: nowrap;
+      margin-bottom: 10px;
+      text-overflow: ellipsis;
+    }
+
     &__btn__favorite {
       width: 32px;
       height: 32px;

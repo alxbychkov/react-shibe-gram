@@ -1,0 +1,1 @@
+export const API_URL = '/shibes?count=20&urls=true&httpsUrls=true';

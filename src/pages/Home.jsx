@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { deletePicture, loadData, setFavorite } from "../redux/actions";
 import axios from "axios";
+import { API_URL } from "../config";
 
 function Home({filtered}) {
     const [isLoading, setLoading] = React.useState(true);
@@ -16,7 +17,7 @@ function Home({filtered}) {
     React.useEffect(() => {
         async function loadPictures() {
             try {
-                const itemsData = await axios.get('https://cors-anywhere.herokuapp.com/https://shibe.online/api/shibes?count=20&urls=true&httpsUrls=true');
+                const itemsData = await axios.get(API_URL);
     
                 setLoading(false);
                 dispatch(loadData(itemsData.data));

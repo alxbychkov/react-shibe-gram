@@ -22,6 +22,9 @@ function Card(props) {
                 }
                 <img width={182} height={182} src={props.image} alt={props.image} />
             </div>
+            <div className={styles.card__item__title}>
+                {props.image.split('/')[4]}
+            </div>
         </div>
     )
 }
